@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognocracia Participativa - Documental</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #141414;
+            color: #fff;
+            margin: 0;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            background: url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to top, #141414 30%, transparent 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Sección capítulos */
+        .chapters {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .chapters h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .chapter-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .chapter-item {
+            background-color: #1f1f1f;
+            padding: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .chapter-item:hover {
+            transform: scale(1.05);
+            background-color: #2a2a2a;
+        }
+
+        /* Video */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .video-container iframe { height: 250px; }
+            .chapter-item { width: 45%; }
+        }
+
+        @media (max-width: 480px) {
+            .chapter-item { width: 90%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cognocracia Participativa</h1>
+            <p>Explora cómo el conocimiento y la participación ciudadana pueden transformar la política.</p>
+        </div>
+    </section>
+
+    <!-- Capítulos -->
+    <section class="chapters">
+        
+        
+        </div>
+    </section>
+
+    <!-- Video -->
+    <section class="video-container">
+        <iframe id="player" src="https://www.youtube.com/embed/VIDEO_ID1" allowfullscreen></iframe>
+    </section>
+
+	<h2>Capítulos</h2>
+	<div class="chapter-list">
+            <div class="chapter-item" onclick="loadVideo('VIDEO_ID1')">Capítulo 1: Introducción</div>
+            <div class="chapter-item" onclick="loadVideo('VIDEO_ID2')">Capítulo 2: Historia</div>
+            <div class="chapter-item" onclick="loadVideo('VIDEO_ID3')">Capítulo 3: Participación</div>
+            <div class="chapter-item" onclick="loadVideo('VIDEO_ID4')">Capítulo 4: Ejemplos</div>
+            <div class="chapter-item" onclick="loadVideo('VIDEO_ID5')">Capítulo 5: Conclusión</div>
+        </div>
+
+    <script>
+        function loadVideo(videoId) {
+            document.getElementById('player').src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            window.scrollTo({ top: document.getElementById('player').offsetTop - 50, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
